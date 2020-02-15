@@ -16,7 +16,6 @@ void main() {
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]);
-
   initializeDateFormatting("pt_BR", null);
 
   WidgetsFlutterBinding.ensureInitialized();
