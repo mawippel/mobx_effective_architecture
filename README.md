@@ -10,3 +10,11 @@ Awesome Flutter Snippets
 flutter_mobx
 mobxcodegen
 ```
+
+In your `settings.json` file, insert the following content:
+
+```json
+"files.exclude": {
+    "**/*.g.dart": true,
+}
+```

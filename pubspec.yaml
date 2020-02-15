@@ -16,6 +16,10 @@ dependencies:
   get_it:
   json_annotation:
   oktoast:
+  intl:
+  dio:
+  firebase_crashlytics:
+  firebase_analytics:
 
 dev_dependencies:
   mobx_codegen:
