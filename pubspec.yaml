@@ -1,0 +1,29 @@
+name: mobx_effective_architecture
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.2
+  mobx:
+  flutter_mobx:
+  get_it:
+  json_annotation:
+  oktoast:
+
+dev_dependencies:
+  mobx_codegen:
+  build_runner:
+  lint:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  uses-material-design: true

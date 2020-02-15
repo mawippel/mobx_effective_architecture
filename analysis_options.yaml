@@ -1,0 +1,48 @@
+# See: https://dart-lang.github.io/linter/lints/
+
+include: package:lint/analysis_options.yaml
+
+analyzer:
+  strong-mode:
+    implicit-casts: true
+  errors:
+    # treat missing required parameters as a warning (not a hint)
+    missing_required_param: warning
+    # treat missing returns as a warning (not a hint)
+    missing_return: warning
+    todo: ignore
+
+
+linter:
+  rules:
+    always_specify_types: false
+    always_declare_return_types: true
+    always_put_required_named_parameters_first: true
+    annotate_overrides: true
+    avoid_bool_literals_in_conditional_expressions: true
+    avoid_classes_with_only_static_members: false
+    avoid_print: true
+    avoid_unnecessary_containers: true
+    await_only_futures: true
+    curly_braces_in_flow_control_structures: true
+    directives_ordering: true
+    empty_catches: true
+    file_names: true
+    prefer_adjacent_string_concatenation: true
+    prefer_expression_function_bodies: true
+    prefer_final_in_for_each: true
+    prefer_final_locals: true
+    prefer_foreach: true
+    prefer_is_empty: true
+    prefer_is_not_empty: true
+    prefer_is_not_operator: true
+    prefer_spread_collections: true
+    sort_constructors_first: true
+    sort_pub_dependencies: true
+    unawaited_futures: true
+    unnecessary_lambdas: true
+    unnecessary_null_in_if_null_operators: true
+    unnecessary_overrides: true
+    unnecessary_parenthesis: true
+    unnecessary_this: true
+    use_rethrow_when_possible: true
