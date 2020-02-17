@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
+import 'package:mobx_effective_architecture/domain/home/home_page.dart';
 import 'package:mobx_effective_architecture/stores/main_store.dart';
 
 class LoginPage extends StatelessWidget {
@@ -52,7 +54,9 @@ class LoginPage extends StatelessWidget {
               ),
               Observer(
                 builder: (_) => RaisedButton(
-                  onPressed: mainStore.loginStore.isValid ? () {} : null,
+                  onPressed: mainStore.loginStore.isValid
+                      ? () => Get.toNamed(HomePage.name)
+                      : null,
                   child: const Text('Save'),
                 ),
               ),
