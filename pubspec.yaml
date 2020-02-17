@@ -14,6 +14,7 @@ dependencies:
   dio: ^3.0.8
   firebase_analytics: ^5.0.11
   firebase_crashlytics: ^0.1.2+5
+  flutter_dotenv: ^2.1.0
   flutter_mobx: ^1.0.1
   get: ^1.9.2
   get_it: ^3.1.0
@@ -33,3 +34,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - .env

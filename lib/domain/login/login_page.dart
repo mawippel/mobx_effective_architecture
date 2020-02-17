@@ -55,7 +55,7 @@ class LoginPage extends StatelessWidget {
               Observer(
                 builder: (_) => RaisedButton(
                   onPressed: mainStore.loginStore.isValid
-                      ? () => Get.offNamed(HomePage.name)
+                      ? () => mainStore.authStore.isAuthenticated = true
                       : null,
                   child: const Text('Save'),
                 ),

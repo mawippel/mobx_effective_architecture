@@ -5,14 +5,14 @@ import 'package:get_it/get_it.dart';
 import 'package:mobx_effective_architecture/app.dart';
 import 'package:mobx_effective_architecture/stores/main_store.dart';
 
-void main() {
+Future runProd() async {
   debugPrint = (String message, {int wrapWidth}) {};
 
   FlutterError.onError = Crashlytics.instance.recordFlutterError;
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  SystemChrome.setPreferredOrientations([
+  await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]);

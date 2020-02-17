@@ -5,7 +5,7 @@ import 'package:get_it/get_it.dart';
 import 'package:mobx_effective_architecture/app.dart';
 import 'package:mobx_effective_architecture/stores/main_store.dart';
 
-void main() {
+Future runDev() async {
   debugPrint = (String message, {int wrapWidth}) => debugPrintSynchronously(
         "[${DateTime.now()}]: $message",
         wrapWidth: wrapWidth,
@@ -15,7 +15,7 @@ void main() {
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  SystemChrome.setPreferredOrientations([
+  await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]);
