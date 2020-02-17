@@ -8,7 +8,6 @@ Install the following VSCode Plugins:
 ```
 Awesome Flutter Snippets
 flutter_mobx
-mobxcodegen
 ```
 
 In your `settings.json` file, insert the following content:

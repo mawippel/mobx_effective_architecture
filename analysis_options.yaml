@@ -46,3 +46,4 @@ linter:
     unnecessary_parenthesis: true
     unnecessary_this: true
     use_rethrow_when_possible: true
+    use_setters_to_change_properties: false
