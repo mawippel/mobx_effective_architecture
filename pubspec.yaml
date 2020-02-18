@@ -24,10 +24,10 @@ dependencies:
   oktoast: ^2.3.1
 
 dev_dependencies:
-  mobx_codegen:
-  build_runner:
-  lint:
-  json_serializable:
+  mobx_codegen: ^1.0.2
+  build_runner: ^1.7.4
+  lint: ^1.1.1
+  json_serializable: ^3.2.5
   flutter_test:
     sdk: flutter
 

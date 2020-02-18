@@ -7,8 +7,8 @@ Future main() async {
   final String isDev = DotEnv().env['IS_DEVELOPMENT'];
   
   if (isDev == 'False') {
-    await runDev();
-  } else {
     await runProd();
+  } else {
+    await runDev();
   }
 }
