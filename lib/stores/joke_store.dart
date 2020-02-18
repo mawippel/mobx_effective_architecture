@@ -3,6 +3,8 @@ import 'package:mobx_effective_architecture/domain/joke/joke_model.dart';
 import 'package:mobx_effective_architecture/domain/joke/joke_service.dart';
 import 'package:mobx_effective_architecture/utils/dio_error_handler.dart';
 import 'package:oktoast/oktoast.dart';
+
+import '../domain/joke/joke_service.dart';
 part 'joke_store.g.dart';
 
 class JokeStore = _JokeStoreBase with _$JokeStore;
@@ -18,7 +20,7 @@ abstract class _JokeStoreBase with Store {
   Future fetchJoke() async {
     isLoading = true;
     try {
-      final Joke joke = await JokeService.getInstance().fetchJoke();
+      final joke = await JokeService.fetchJoke();
       jokes.add(joke);
     } catch (e) {
       DioErrorHandler.handle(e);
@@ -32,12 +34,11 @@ abstract class _JokeStoreBase with Store {
   Future fetchJokeWithError() async {
     isLoading = true;
     try {
-      await JokeService.getInstance().fetchJokeWithError();
+      await JokeService.fetchJokeWithError();
     } catch (e) {
       DioErrorHandler.handle(e);
     } finally {
       isLoading = false;
     }
-    showToast("The server responded successfully");
   }
 }

@@ -4,7 +4,7 @@ import 'main_prod.dart';
 
 Future main() async {
   await DotEnv().load('.env');
-  final String isDev = DotEnv().env['IS_DEVELOPMENT'];
+  final isDev = DotEnv().env['IS_DEVELOPMENT'];
   
   if (isDev == 'False') {
     await runProd();

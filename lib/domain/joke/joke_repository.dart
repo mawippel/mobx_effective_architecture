@@ -1,16 +1,12 @@
 import 'package:mobx_effective_architecture/shared/abstract_repository.dart';
 
 class JokeRepository extends AbstractRepository {
-  JokeRepository._();
-
-  static JokeRepository _instance;
-
-  static JokeRepository getInstance() {
-    if (_instance == null) {
-      return _instance = JokeRepository._();
-    }
-    return _instance;
+  factory JokeRepository() {
+    return _singleton;
   }
+  JokeRepository._internal();
+
+  static final JokeRepository _singleton = JokeRepository._internal();
 
   Future fetchJoke() => httpClient.client.get(
         '/joke/Dark',

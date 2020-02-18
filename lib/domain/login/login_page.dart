@@ -17,9 +17,10 @@ class LoginPage extends StatelessWidget {
         TextField(
           onChanged: onChange,
           decoration: InputDecoration(
-              border: const OutlineInputBorder(),
-              labelText: labelText,
-              errorText: errorText == null ? '' : errorText()),
+            border: const OutlineInputBorder(),
+            labelText: labelText,
+            errorText: errorText == null ? '' : errorText(),
+          ),
         );
 
     return Scaffold(
@@ -54,8 +55,8 @@ class LoginPage extends StatelessWidget {
                 builder: (_) => RaisedButton(
                   onPressed: mainStore.loginStore.isValid
                       ? () {
-                        mainStore.authStore.isAuthenticated = true;
-                      }
+                          mainStore.authStore.isAuthenticated = true;
+                        }
                       : null,
                   child: const Text('Login'),
                 ),
