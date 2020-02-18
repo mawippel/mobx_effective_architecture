@@ -6,7 +6,7 @@ import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class JokePage extends StatelessWidget {
   JokePage() {
-    mainStore.homeStore.fetchJoke();
+    mainStore.jokeStore.fetchJoke();
   }
 
   static const String name = '/home';
@@ -17,16 +17,22 @@ class JokePage extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           title: const Text('Jokes'),
+          actions: <Widget>[
+            FlatButton(
+              onPressed: mainStore.jokeStore.fetchJokeWithError,
+              child: const Text('FIRE AN ERROR!'),
+            ),
+          ],
         ),
         body: Observer(
           builder: (_) => ModalProgressHUD(
             opacity: 0.6,
             color: Colors.black,
-            inAsyncCall: mainStore.homeStore.isLoading,
+            inAsyncCall: mainStore.jokeStore.isLoading,
             child: ListView.builder(
-              itemCount: mainStore.homeStore.jokes.length,
+              itemCount: mainStore.jokeStore.jokes.length,
               itemBuilder: (_, index) {
-                final item = mainStore.homeStore.jokes[index];
+                final item = mainStore.jokeStore.jokes[index];
                 return ListTile(
                   title: Text(item.setup),
                   subtitle: Text(item.delivery),
@@ -36,7 +42,7 @@ class JokePage extends StatelessWidget {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: mainStore.homeStore.fetchJoke,
+          onPressed: mainStore.jokeStore.fetchJoke,
           child: Icon(Icons.add),
         ),
       );

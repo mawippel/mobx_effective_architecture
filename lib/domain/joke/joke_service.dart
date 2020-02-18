@@ -15,7 +15,11 @@ class JokeService {
   }
 
   Future fetchJoke() async {
-    Response response = await JokeRepository.getInstance().fetchJoke();
+    final Response response = await JokeRepository.getInstance().fetchJoke();
     return Joke.fromJson(response.data);
+  }
+
+  Future fetchJokeWithError() {
+    throw Exception('Some crazy exception ocurred');
   }
 }

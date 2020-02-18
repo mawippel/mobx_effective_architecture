@@ -12,14 +12,14 @@ import 'package:mobx_effective_architecture/utils/routes.dart';
 import 'package:oktoast/oktoast.dart';
 
 class App extends StatelessWidget {
-  static FirebaseAnalytics analytics = FirebaseAnalytics();
-
   App() {
     final GetIt getIt = GetIt.I;
     getIt.registerSingleton<MainStore>(MainStore());
     getIt.registerSingleton<HttpClient>(
         HttpClient(Dio(), DotEnv().env['BASE_URL']));
   }
+
+  static FirebaseAnalytics analytics = FirebaseAnalytics();
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,6 @@ class App extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         initialRoute: '/login',
-        home: JokePage(),
         navigatorKey: Get.key,
         navigatorObservers: [FirebaseAnalyticsObserver(analytics: analytics)],
         routes: Routes.all(),

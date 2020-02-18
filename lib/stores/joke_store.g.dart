@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'home_store.dart';
+part of 'joke_store.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,8 +8,8 @@ part of 'home_store.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$HomeStore on _HomeStoreBase, Store {
-  final _$jokesAtom = Atom(name: '_HomeStoreBase.jokes');
+mixin _$JokeStore on _JokeStoreBase, Store {
+  final _$jokesAtom = Atom(name: '_JokeStoreBase.jokes');
 
   @override
   ObservableList<Joke> get jokes {
@@ -26,7 +26,7 @@ mixin _$HomeStore on _HomeStoreBase, Store {
     }, _$jokesAtom, name: '${_$jokesAtom.name}_set');
   }
 
-  final _$isLoadingAtom = Atom(name: '_HomeStoreBase.isLoading');
+  final _$isLoadingAtom = Atom(name: '_JokeStoreBase.isLoading');
 
   @override
   bool get isLoading {
@@ -46,8 +46,16 @@ mixin _$HomeStore on _HomeStoreBase, Store {
   final _$fetchJokeAsyncAction = AsyncAction('fetchJoke');
 
   @override
-  Future fetchJoke() {
+  Future<dynamic> fetchJoke() {
     return _$fetchJokeAsyncAction.run(() => super.fetchJoke());
+  }
+
+  final _$fetchJokeWithErrorAsyncAction = AsyncAction('fetchJokeWithError');
+
+  @override
+  Future<dynamic> fetchJokeWithError() {
+    return _$fetchJokeWithErrorAsyncAction
+        .run(() => super.fetchJokeWithError());
   }
 
   @override

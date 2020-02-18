@@ -1,6 +1,6 @@
 import 'package:mobx/mobx.dart';
 import 'package:mobx_effective_architecture/stores/auth_store.dart';
-import 'package:mobx_effective_architecture/stores/home_store.dart';
+import 'package:mobx_effective_architecture/stores/joke_store.dart';
 import 'package:mobx_effective_architecture/stores/login_store.dart';
 part 'main_store.g.dart';
 
@@ -10,5 +10,5 @@ abstract class _MainStoreBase with Store {
   // Set stores
   final LoginStore loginStore = LoginStore();
   final AuthStore authStore = AuthStore();
-  final HomeStore homeStore = HomeStore();
+  final JokeStore jokeStore = JokeStore();
 }
