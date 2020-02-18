@@ -14,7 +14,7 @@ abstract class _MainStoreBase with Store {
   final AuthStore authStore = AuthStore();
   final HomeStore homeStore = HomeStore();
 
-  MainStore() {
+  _MainStoreBase() {
     reaction<bool>(
       (_) => authStore.isAuthenticated,
       (isAuthenticated) {
