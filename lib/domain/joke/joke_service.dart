@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:mobx_effective_architecture/domain/home/joke_model.dart';
-import 'package:mobx_effective_architecture/domain/home/joke_repository.dart';
+import 'package:mobx_effective_architecture/domain/joke/joke_model.dart';
+import 'package:mobx_effective_architecture/domain/joke/joke_repository.dart';
 
 class JokeService {
   JokeService._() {}

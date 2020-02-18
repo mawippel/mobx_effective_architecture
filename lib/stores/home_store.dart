@@ -1,6 +1,6 @@
 import 'package:mobx/mobx.dart';
-import 'package:mobx_effective_architecture/domain/home/joke_model.dart';
-import 'package:mobx_effective_architecture/domain/home/joke_service.dart';
+import 'package:mobx_effective_architecture/domain/joke/joke_model.dart';
+import 'package:mobx_effective_architecture/domain/joke/joke_service.dart';
 part 'home_store.g.dart';
 
 class HomeStore = _HomeStoreBase with _$HomeStore;

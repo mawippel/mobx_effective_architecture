@@ -1,7 +1,7 @@
 import 'package:mobx_effective_architecture/shared/abstract_repository.dart';
 
 class JokeRepository extends AbstractRepository {
-  JokeRepository._() {}
+  JokeRepository._();
 
   static JokeRepository _instance;
 
@@ -12,7 +12,8 @@ class JokeRepository extends AbstractRepository {
     return _instance;
   }
 
-  Future fetchJoke() async {
-    return await httpClient.client.get('/joke/Dark');
-  }
+  Future fetchJoke() => httpClient.client.get(
+        '/joke/Dark',
+        queryParameters: {'type': 'twopart'},
+      );
 }

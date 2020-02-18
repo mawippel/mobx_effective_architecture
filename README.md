@@ -24,8 +24,8 @@ flutter pub run build_runner watch
 ```
 
 TODO
-- [ ] Home page efetuando req http retornando uma lista
-- [ ] Loading na home page enquanto não retornou dados (modal_progress_hud)
+- [x] Home page efetuando req http retornando uma lista
+- [x] Loading na home page enquanto não retornou dados (modal_progress_hud)
 - [ ] Aparecer um dialog de sucesso da requisição HTTP
 - [ ] Aparecer um dialog de erro da requisição HTTP
 - [ ] Compartilhar o estado de telas, uma alterando a outra

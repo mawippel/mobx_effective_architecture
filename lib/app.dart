@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
-import 'package:mobx_effective_architecture/domain/home/home_page.dart';
+import 'package:mobx_effective_architecture/domain/joke/joke_page.dart';
 import 'package:mobx_effective_architecture/shared/http_client.dart';
 import 'package:mobx_effective_architecture/stores/main_store.dart';
 import 'package:mobx_effective_architecture/utils/routes.dart';
@@ -33,7 +33,7 @@ class App extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         initialRoute: '/login',
-        home: const HomePage(),
+        home: JokePage(),
         navigatorKey: Get.key,
         navigatorObservers: [FirebaseAnalyticsObserver(analytics: analytics)],
         routes: Routes.all(),
