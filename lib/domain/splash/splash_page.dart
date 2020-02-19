@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobx_effective_architecture/domain/hive/hive_service.dart';
 import 'package:mobx_effective_architecture/domain/joke/joke_page.dart';
 import 'package:mobx_effective_architecture/domain/login/login_page.dart';
+import 'package:mobx_effective_architecture/shared/services/hive_service.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key key}) : super(key: key);

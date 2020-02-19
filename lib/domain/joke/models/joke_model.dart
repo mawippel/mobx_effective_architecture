@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:mobx_effective_architecture/domain/joke/flag_model.dart';
+import 'package:mobx_effective_architecture/domain/joke/models/flag_model.dart';
 part 'joke_model.g.dart';
 
 @JsonSerializable()

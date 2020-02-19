@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:mobx_effective_architecture/domain/joke/joke_model.dart';
 import 'package:mobx_effective_architecture/domain/joke/joke_repository.dart';
+import 'package:mobx_effective_architecture/domain/joke/models/joke_model.dart';
 
 class JokeService {
   static Future fetchJoke() async {

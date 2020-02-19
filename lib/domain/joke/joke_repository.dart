@@ -1,4 +1,5 @@
-import 'package:mobx_effective_architecture/shared/abstract_repository.dart';
+
+import 'package:mobx_effective_architecture/shared/repositories/abstract_repository.dart';
 
 class JokeRepository extends AbstractRepository {
   factory JokeRepository() {
@@ -8,7 +9,7 @@ class JokeRepository extends AbstractRepository {
 
   static final JokeRepository _singleton = JokeRepository._internal();
 
-  Future fetchJoke() => httpClient.client.get(
+  Future fetchJoke() => httpClient.get(
         '/joke/Dark',
         queryParameters: {'type': 'twopart'},
       );

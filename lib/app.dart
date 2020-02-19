@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
-import 'package:mobx_effective_architecture/shared/http_client.dart';
-import 'package:mobx_effective_architecture/stores/main_store.dart';
+import 'package:mobx_effective_architecture/shared/providers/http_client.dart';
+import 'package:mobx_effective_architecture/shared/stores/main_store.dart';
 import 'package:mobx_effective_architecture/utils/routes.dart';
 import 'package:oktoast/oktoast.dart';
 
