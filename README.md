@@ -28,6 +28,6 @@ TODO
 - [x] Loading na home page enquanto não retornou dados (modal_progress_hud)
 - [x] Aparecer um dialog de sucesso da requisição HTTP
 - [x] Aparecer um dialog de erro da requisição HTTP
-- [ ] Compartilhar o estado de telas, uma alterando a outra
+- [x] Compartilhar o estado de telas, uma alterando a outra
 - [ ] Usar o Hive para guardar o estado se já está logado ou não no app
 - [ ] Descobrir se o usuário já está logado usando uma SplashScreen, e redirecioná-lo para a tela correta

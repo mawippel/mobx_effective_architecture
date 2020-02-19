@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
+import 'package:mobx_effective_architecture/domain/custom-joke/custom_joke_page.dart';
 import 'package:mobx_effective_architecture/stores/main_store.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
@@ -19,8 +21,12 @@ class JokePage extends StatelessWidget {
           title: const Text('Jokes'),
           actions: <Widget>[
             FlatButton(
+              onPressed: () => Get.toNamed(CustomJokePage.name),
+              child: const Text('Add Custom Joke'),
+            ),
+            FlatButton(
               onPressed: mainStore.jokeStore.fetchJokeWithError,
-              child: const Text('FIRE AN ERROR!'),
+              child: const Text('ERROR'),
             ),
           ],
         ),

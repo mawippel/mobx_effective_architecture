@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:get/get.dart';
+import 'package:get_it/get_it.dart';
+import 'package:mobx_effective_architecture/domain/joke/joke_model.dart';
+import 'package:mobx_effective_architecture/stores/main_store.dart';
 
 class CustomJokePage extends StatelessWidget {
   const CustomJokePage({Key key}) : super(key: key);
 
+  static const String name = '/custom-joke';
+
   @override
   Widget build(BuildContext context) {
-    String joke = '';
+    final mainStore = GetIt.I.get<MainStore>();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login Page'),
+        title: const Text('Insert Joke'),
       ),
       body: Center(
         child: Container(
@@ -17,22 +24,28 @@ class CustomJokePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               TextField(
-                onChanged: (value) {
-                  joke = value;
-                },
+                onChanged: (value) => mainStore.customJokeStore.text = value,
                 decoration: const InputDecoration(
-                  border: const OutlineInputBorder(),
-                  labelText: 'Piada',
+                  border: OutlineInputBorder(),
+                  labelText: 'Joke',
                 ),
               ),
-              RaisedButton(
-                onPressed: mainStore.loginStore.isValid
-                    ? () {
-                        mainStore.authStore.isAuthenticated = true;
-                      }
-                    : null,
-                child: const Text('Login'),
-              ),
+              Observer(
+                builder: (_) {
+                  return RaisedButton(
+                    onPressed: () {
+                      mainStore.jokeStore.addJoke(
+                        Joke(
+                          setup: 'Inserted by the user',
+                          delivery: mainStore.customJokeStore.text,
+                        ),
+                      );
+                      Get.back();
+                    },
+                    child: const Text('Insert'),
+                  );
+                },
+              )
             ],
           ),
         ),

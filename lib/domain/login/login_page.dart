@@ -54,9 +54,7 @@ class LoginPage extends StatelessWidget {
               Observer(
                 builder: (_) => RaisedButton(
                   onPressed: mainStore.loginStore.isValid
-                      ? () {
-                          mainStore.authStore.isAuthenticated = true;
-                        }
+                      ? () => mainStore.authStore.isAuthenticated = true
                       : null,
                   child: const Text('Login'),
                 ),

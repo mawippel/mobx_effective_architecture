@@ -17,6 +17,11 @@ abstract class _JokeStoreBase with Store {
   bool isLoading;
 
   @action
+  void addJoke(Joke joke) {
+    jokes.add(joke);
+  }
+
+  @action
   Future fetchJoke() async {
     isLoading = true;
     try {

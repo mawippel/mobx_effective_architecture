@@ -58,6 +58,19 @@ mixin _$JokeStore on _JokeStoreBase, Store {
         .run(() => super.fetchJokeWithError());
   }
 
+  final _$_JokeStoreBaseActionController =
+      ActionController(name: '_JokeStoreBase');
+
+  @override
+  void addJoke(Joke joke) {
+    final _$actionInfo = _$_JokeStoreBaseActionController.startAction();
+    try {
+      return super.addJoke(joke);
+    } finally {
+      _$_JokeStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     final string =
