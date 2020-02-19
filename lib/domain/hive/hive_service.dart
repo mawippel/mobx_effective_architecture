@@ -8,11 +8,13 @@ class HiveService {
   }
 
   static Future<Box> newBox(String boxName) async {
-    return Hive.openBox('authBox');
+    return Hive.openBox(boxName);
   }
 
   static dynamic get(String boxName, String key) {
-    final box = Hive.box(boxName);
-    return box.get(key);
+    if (Hive.isBoxOpen(boxName)) {
+      final box = Hive.box(boxName);
+      return box.get(key);
+    }
   }
 }

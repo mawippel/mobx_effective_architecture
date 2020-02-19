@@ -30,7 +30,7 @@ class App extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          initialRoute: '/login',
+          initialRoute: '/splash',
           navigatorKey: Get.key,
           navigatorObservers: [FirebaseAnalyticsObserver(analytics: analytics)],
           routes: Routes.all(),
