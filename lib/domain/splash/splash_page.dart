@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
-import 'package:mobx_effective_architecture/domain/login/login_page.dart';
 import 'package:mobx_effective_architecture/shared/services/hive_service.dart';
 import 'package:mobx_effective_architecture/shared/stores/main_store.dart';
 
