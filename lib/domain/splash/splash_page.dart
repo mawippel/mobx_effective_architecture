@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobx_effective_architecture/domain/joke/joke_page.dart';
+import 'package:get_it/get_it.dart';
 import 'package:mobx_effective_architecture/domain/login/login_page.dart';
 import 'package:mobx_effective_architecture/shared/services/hive_service.dart';
+import 'package:mobx_effective_architecture/shared/stores/main_store.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key key}) : super(key: key);
@@ -14,6 +15,8 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  final mainStore = GetIt.I.get<MainStore>();
+
   @override
   void initState() {
     super.initState();
@@ -23,17 +26,11 @@ class _SplashPageState extends State<SplashPage> {
         Future.microtask(init).timeout(const Duration(seconds: 15)),
         Future.delayed(const Duration(seconds: 3)),
       ],
-    ).then((_) => finish()); // Runs after the Futures are completed
+    ); // Runs after the Futures are completed
   }
 
-  void init() {
-    if (hasUserAccess()) {
-      Get.offNamed(JokePage.name);
-    }
-  }
-
-  void finish() {
-    Get.offNamed(LoginPage.name);
+  Future init() async {
+    mainStore.authStore.isAuthenticated = await hasUserAccess();
   }
 
   @override
@@ -43,10 +40,8 @@ class _SplashPageState extends State<SplashPage> {
         ),
       );
 
-  bool hasUserAccess() {
-    HiveService.newBox('authBox');
-    var xd = HiveService.get('authBox', 'access_token');
-    print(xd);
-    return HiveService.get('authBox', 'access_token') != null;
+  Future<bool> hasUserAccess() async {
+    final box = await HiveService.openBox('authBox');
+    return HiveService.get(box, 'access_token') != null;
   }
 }

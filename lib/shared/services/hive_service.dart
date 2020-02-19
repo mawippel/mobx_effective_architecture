@@ -7,14 +7,11 @@ class HiveService {
     Hive.init(dir.path);
   }
 
-  static Future<Box> newBox(String boxName) async {
+  static Future<Box> openBox(String boxName) async {
     return Hive.openBox(boxName);
   }
 
-  static dynamic get(String boxName, String key) {
-    if (Hive.isBoxOpen(boxName)) {
-      final box = Hive.box(boxName);
-      return box.get(key);
-    }
+  static dynamic get(Box box, String key) {
+    return box.get(key);
   }
 }
