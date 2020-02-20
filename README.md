@@ -67,6 +67,21 @@ Exemplifies the state sharing between two totally independent pages.
 
 ## Third-Party Libraries
 
+  firebase_analytics
+  firebase_crashlytics
+
+  flutter_dotenv
+
+  mobx
+  flutter_mobx
+
+  get
+  get_it
+  hive
+  json_annotation
+  modal_progress_hud
+  oktoast
+
 ## Contributors ✨
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
