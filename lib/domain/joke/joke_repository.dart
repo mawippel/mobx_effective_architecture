@@ -1,4 +1,3 @@
-
 import 'package:mobx_effective_architecture/shared/repositories/abstract_repository.dart';
 
 class JokeRepository extends AbstractRepository {
@@ -11,6 +10,13 @@ class JokeRepository extends AbstractRepository {
 
   Future fetchJoke() => httpClient.get(
         '/joke/Dark',
-        queryParameters: {'type': 'twopart'},
+        queryParameters: {
+          'type': 'twopart',
+          'blacklistFlags': [
+            'nsfw',
+            'racist',
+            'sexist'
+          ]
+        },
       );
 }
