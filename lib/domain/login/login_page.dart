@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
+import 'package:mobx_effective_architecture/components/custom_text_field.dart';
 import 'package:mobx_effective_architecture/shared/stores/main_store.dart';
 
 class LoginPage extends StatelessWidget {
@@ -11,17 +12,6 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mainStore = GetIt.I.get<MainStore>();
-
-    TextField _textField(
-            {String labelText, onChange, String Function() errorText}) =>
-        TextField(
-          onChanged: onChange,
-          decoration: InputDecoration(
-            border: const OutlineInputBorder(),
-            labelText: labelText,
-            errorText: errorText == null ? '' : errorText(),
-          ),
-        );
 
     return Scaffold(
       appBar: AppBar(
@@ -36,13 +26,13 @@ class LoginPage extends StatelessWidget {
               Observer(
                 builder: (_) => Column(
                   children: <Widget>[
-                    _textField(
+                    CustomTextField(
                       labelText: 'Name',
                       onChange: mainStore.loginStore.setUsername,
                       errorText: mainStore.loginStore.validateUsername,
                     ),
                     const SizedBox(height: 20),
-                    _textField(
+                    CustomTextField(
                       labelText: 'Password',
                       onChange: mainStore.loginStore.setPassword,
                       errorText: mainStore.loginStore.validatePassword,
