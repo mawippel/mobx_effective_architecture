@@ -35,6 +35,8 @@ In your `settings.json` file, insert the following content:
 }
 ```
 
+Create the `.env` file, based on `.env.example`.
+
 # Wiki
 
 - **[Introduction](#introduction)**
@@ -44,7 +46,7 @@ In your `settings.json` file, insert the following content:
 
 ## Introduction
 
-This project aims to help developers who are starting a new project in Flutter, using MobX to manage the state. MobX is a state-management library that makes it simple to connect the reactive data of your application with the UI. As a developer, you focus only be with the data that will be consumed by the UI, without worrying about keeping the two in sync.
+This project aims to help developers who are starting a new project in Flutter, using MobX to manage the state. MobX is a state-management library that makes it simple to connect the reactive data of your application with the UI. As a developer, you focus purely with on the data that will be consumed by the UI, without worrying about keeping the two in sync.
 
 This application was developed to contain examples of features that are usually needed in apps, as well as features that we had difficulty implementing during our App development journey in Flutter.
 
@@ -64,6 +66,21 @@ This page also exemplifies Navigation to other pages, along with the presentatio
 Exemplifies the state sharing between two totally independent pages.
 
 ## Scaffolding
+
+Core concepts for this project's structure
+
+1. Sub-packages should not introduce new concepts, just more details
+2. Packages should reflect business-concepts, not technical ones
+
+Explanation of this project's folders:
+
+`lib\components`: Helper Widgets that will be used throughout the whole app
+
+`lib\domain`: All classes that are inside a specific 'domain', considering the business-concepts
+
+`lib\shared`: Classes that are shared throughout more than one domain
+
+`lib\utils`: Helper classes
 
 ## Third-Party Libraries
 
@@ -92,7 +109,7 @@ Thanks goes to these wonderful people:
         <td align="center">
             <a href="https://github.com/mawippel"><img src="https://avatars1.githubusercontent.com/u/37195917?s=460&v=4" width="64px;" alt="" />
             <br /><sub><b>Marcelo Wippel</b></sub></a>
-            <br /><a title="Code">💻</a> <a title="Documentation">📖</a> <a title="Reviewed Pull Requests">👀</a>
+            <br /><a title="Code" href="#ideas-katis">💻</a> <a title="Documentation" href="#ideas-katis">📖</a> <a title="Reviewed Pull Requests" href="#ideas-katis">👀</a>
         </td>
         <td align="center">
             <a href="https://github.com/kmvbatista"><img src="https://avatars1.githubusercontent.com/u/50305552?s=460&v=4" width="64px;" alt="" />
