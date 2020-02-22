@@ -40,9 +40,11 @@ Create the `.env` file, based on `.env.example`.
 # Wiki
 
 - **[Introduction](#introduction)**
-- **[Scaffolding](#contributing)**
-- **[Third-Party Libraries](#core-concepts)**
-- **[Lint](#core-concepts)**
+- **[Features](#features)**
+- **[Scaffolding](#scaffolding)**
+- **[Third-Party Libraries](#Third-Party-Libraries)**
+- **[Lint](#lint)**
+- **[Contributors](#contributors)**
 
 ## Introduction
 
@@ -50,7 +52,7 @@ This project aims to help developers who are starting a new project in Flutter, 
 
 This application was developed to contain examples of features that are usually needed in apps, as well as features that we had difficulty implementing during our App development journey in Flutter.
 
-## App Content/Features
+## Features
 
 #### Splash Page
 The Splash Page loads data used as the basis for the application, checks the existence of a User Token and validate whether the user has ever logged into the App.
@@ -99,7 +101,15 @@ Explanation of this project's folders:
   modal_progress_hud
   oktoast
 
-## Contributors ✨
+## Lint
+
+This project already has a configured Lint, based on some of the rules of [Effective Dart: Style](https://dart.dev/guides/language/effective-dart/style)
+
+You can enable/disable rules whenever you want, depending on your needs. To do so adjust your `analysis_options.yaml`.
+
+You can check some rules [here](https://dart-lang.github.io/linter/lints/).
+
+## Contributors
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 
