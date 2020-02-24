@@ -24,7 +24,7 @@ class _SplashPageState extends State<SplashPage> {
         Future.microtask(init).timeout(const Duration(seconds: 15)),
         Future.delayed(const Duration(seconds: 3)),
       ],
-    ); // Runs after the Futures are completed
+    );
   }
 
   Future init() async {

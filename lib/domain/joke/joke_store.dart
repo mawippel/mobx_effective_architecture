@@ -26,12 +26,12 @@ abstract class _JokeStoreBase with Store {
     try {
       final joke = await JokeService.fetchJoke();
       jokes.add(joke);
+      showToast("The server responded successfully");
     } catch (e) {
       DioErrorHandler.handle(e);
     } finally {
       isLoading = false;
     }
-    showToast("The server responded successfully");
   }
 
   @action
