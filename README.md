@@ -86,20 +86,25 @@ Explanation of this project's folders:
 
 ## Third-Party Libraries
 
-  firebase_analytics
-  firebase_crashlytics
+  `firebase_analytics`: Plugin to use the Google Analytics for Firebase, an app measurement solution that provides insight on app usage and user engagement on Android and iOS
 
-  flutter_dotenv
+  `firebase_crashlytics`: Plugin for Firebase Crashlytics. It reports uncaught errors to the Firebase console
 
-  mobx
-  flutter_mobx
+  `flutter_dotenv`: Used to configure any flutter application with global variables using a `.env` file
 
-  get
-  get_it
-  hive
-  json_annotation
-  modal_progress_hud
-  oktoast
+  `mobx` and `flutter_mobx`: Libraries to reactively manage the state of the application
+
+  `get`: Navigation library that lets you navigate between screens, open dialogs, and display snackbars easily with no context
+
+  `get_it`: Service Locator that allows to "inject dependencies" and request them everywhere in your App. It can be used instead of `InheritedWidget` or `Provider`
+
+  `hive`: Key-value database. Strongly encrypted using AES-256. Faster than `Shared Preferences` and `SQLite`
+
+  `json_annotation`: Library used to generate code for JSON serialization and deserialization
+
+  `modal_progress_hud`: A modal progress indicator widget. Wrap around another widget to block access to widget during an async call
+
+  `oktoast`: Toast library to provide in-app toast notifications
 
 ## Lint
 
