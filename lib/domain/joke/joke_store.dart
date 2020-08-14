@@ -39,6 +39,7 @@ abstract class _JokeStoreBase with Store {
     isLoading = true;
     try {
       await JokeService.fetchJokeWithError();
+      print('XD');
     } catch (e) {
       DioErrorHandler.handle(e);
     } finally {
