@@ -11,6 +11,8 @@ analyzer:
     # treat missing returns as a warning (not a hint)
     missing_return: warning
     todo: ignore
+  exclude:
+    - lib/**.g.dart
 
 
 linter:

@@ -8,7 +8,7 @@ Future main() async {
   final isDev = DotEnv().env['IS_DEVELOPMENT'];
 
   await HiveService.init();
-  
+
   if (isDev == 'False') {
     await runProd();
   } else {
