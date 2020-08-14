@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
@@ -11,6 +12,7 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var x = Get.height;
     return TextField(
       onChanged: onChange,
       decoration: InputDecoration(
