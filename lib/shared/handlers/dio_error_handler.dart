@@ -10,7 +10,7 @@ class DioErrorHandler {
         onPressed: Get.back,
         child: const Text('Close'),
       ),
-      backgroundColor: Colors.black.withOpacity(0.6),
+      backgroundColor: Colors.white,
     );
   }
 }

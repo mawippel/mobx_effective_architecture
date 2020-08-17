@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
+import 'package:mobx_effective_architecture/domain/joke/joke_repository.dart';
+import 'package:mobx_effective_architecture/domain/joke/joke_repository_impl.dart';
+import 'package:mobx_effective_architecture/domain/joke/joke_service.dart';
+import 'package:mobx_effective_architecture/domain/joke/joke_service_impl.dart';
 import 'package:mobx_effective_architecture/shared/providers/http_client.dart';
 import 'package:mobx_effective_architecture/shared/stores/main_store.dart';
 import 'package:mobx_effective_architecture/utils/routes.dart';
@@ -13,9 +17,7 @@ import 'package:oktoast/oktoast.dart';
 class App extends StatelessWidget {
   App() {
     final getIt = GetIt.I;
-    getIt.registerSingleton<MainStore>(MainStore());
-    getIt.registerSingleton<HttpClient>(
-        HttpClient(Dio(), DotEnv().env['BASE_URL']));
+    registerDependencies(getIt);
   }
 
   static FirebaseAnalytics analytics = FirebaseAnalytics();
@@ -36,4 +38,13 @@ class App extends StatelessWidget {
           routes: Routes.all(),
         ),
       );
+
+  void registerDependencies(GetIt instance) {
+    instance.registerLazySingleton<JokeService>(() => JokeServiceImpl());
+    instance.registerLazySingleton<JokeRepository>(() => JokeRepositoryImpl());
+
+    instance.registerSingleton<MainStore>(MainStore());
+    instance.registerSingleton<HttpClient>(
+        HttpClient(Dio(), DotEnv().env['BASE_URL']));
+  }
 }

@@ -9,8 +9,6 @@ part 'main_store.g.dart';
 class MainStore = _MainStoreBase with _$MainStore;
 
 abstract class _MainStoreBase with Store {
-
-  // Set stores
   final LoginStore loginStore = LoginStore();
   final AuthStore authStore = AuthStore();
   final JokeStore jokeStore = JokeStore();
