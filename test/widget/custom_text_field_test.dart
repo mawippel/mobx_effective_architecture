@@ -7,20 +7,22 @@ import 'package:mobx_effective_architecture/components/custom_text_field.dart';
 void main() {
   testWidgets('CustomTextField has a label text', (WidgetTester tester) async {
     // Arrange
-    await tester.pumpWidget(const GetMaterialApp(
-      home: Material(
-        child: CustomTextField(
-          labelText: 'Some label',
-          onChange: null,
-          errorText: null,
-        ),
-      ),
-    ));
+    const labelText = 'SomeLabel';
 
     // Act
-    final titleFinder = find.text('Some label');
+    await tester.pumpWidget(
+      const GetMaterialApp(
+        home: Material(
+          child: CustomTextField(
+            labelText: labelText,
+            onChange: null,
+            errorText: null,
+          ),
+        ),
+      ),
+    );
 
     // Assert
-    expect(titleFinder, findsOneWidget);
+    expect(find.text(labelText), findsOneWidget);
   });
 }

@@ -3,21 +3,8 @@ import 'package:get_it/get_it.dart';
 import 'package:mobx_effective_architecture/shared/services/hive_service.dart';
 import 'package:mobx_effective_architecture/shared/stores/main_store.dart';
 
-class SplashPage extends StatefulWidget {
-  const SplashPage({Key key}) : super(key: key);
-
-  static const String name = '/splash';
-
-  @override
-  _SplashPageState createState() => _SplashPageState();
-}
-
-class _SplashPageState extends State<SplashPage> {
-  final mainStore = GetIt.I.get<MainStore>();
-
-  @override
-  void initState() {
-    super.initState();
+class SplashPage extends StatelessWidget {
+  SplashPage({Key key}) : super(key: key) {
     Future.wait(
       [
         // All the Futures that will be executed while loading
@@ -27,9 +14,9 @@ class _SplashPageState extends State<SplashPage> {
     );
   }
 
-  Future init() async {
-    mainStore.authStore.isAuthenticated = await hasUserAccess();
-  }
+  static const String name = '/splash';
+  final MainStore mainStore = GetIt.I.get<MainStore>();
+  final HiveService hiveService = GetIt.I.get<HiveService>();
 
   @override
   Widget build(BuildContext context) => const Scaffold(
@@ -38,8 +25,12 @@ class _SplashPageState extends State<SplashPage> {
         ),
       );
 
+  Future init() async {
+    mainStore.authStore.isAuthenticated = await hasUserAccess();
+  }
+
   Future<bool> hasUserAccess() async {
-    final box = await HiveService.openBox('authBox');
-    return HiveService.get(box, 'access_token') != null;
+    final box = await hiveService.openBox('authBox');
+    return hiveService.get(box, 'access_token') != null;
   }
 }

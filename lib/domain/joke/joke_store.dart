@@ -7,15 +7,10 @@ import 'package:oktoast/oktoast.dart';
 
 part 'joke_store.g.dart';
 
-class JokeStore extends _JokeStoreBase with _$JokeStore {
-  JokeStore({JokeService jokeService}) : super(jokeService: jokeService);
-}
+class JokeStore = _JokeStoreBase with _$JokeStore;
 
 abstract class _JokeStoreBase with Store {
-  _JokeStoreBase({JokeService jokeService})
-      : jokeService = jokeService ?? GetIt.I.get<JokeService>();
-
-  final JokeService jokeService;
+  final JokeService jokeService = GetIt.I.get<JokeService>();
 
   @observable
   ObservableList<Joke> jokes = <Joke>[].asObservable();

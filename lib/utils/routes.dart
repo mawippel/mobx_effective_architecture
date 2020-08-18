@@ -5,12 +5,10 @@ import 'package:mobx_effective_architecture/domain/login/login_page.dart';
 import 'package:mobx_effective_architecture/domain/splash/splash_page.dart';
 
 class Routes {
-
   static Map<String, Widget Function(BuildContext)> all() => {
-    LoginPage.name: (_) => const LoginPage(),
-    JokePage.name: (_) => JokePage(),
-    CustomJokePage.name: (_) => const CustomJokePage(),
-    SplashPage.name: (_) => const SplashPage(),
-  };
-  
+        LoginPage.name: (_) => const LoginPage(),
+        JokePage.name: (_) => JokePage(),
+        CustomJokePage.name: (_) => const CustomJokePage(),
+        SplashPage.name: (_) => SplashPage(),
+      };
 }

@@ -10,6 +10,8 @@ import 'package:mobx_effective_architecture/domain/joke/joke_repository_impl.dar
 import 'package:mobx_effective_architecture/domain/joke/joke_service.dart';
 import 'package:mobx_effective_architecture/domain/joke/joke_service_impl.dart';
 import 'package:mobx_effective_architecture/shared/providers/http_client.dart';
+import 'package:mobx_effective_architecture/shared/services/auth_service.dart';
+import 'package:mobx_effective_architecture/shared/services/auth_service_impl.dart';
 import 'package:mobx_effective_architecture/shared/stores/main_store.dart';
 import 'package:mobx_effective_architecture/utils/routes.dart';
 import 'package:oktoast/oktoast.dart';
@@ -42,6 +44,7 @@ class App extends StatelessWidget {
   void registerDependencies(GetIt instance) {
     instance.registerLazySingleton<JokeService>(() => JokeServiceImpl());
     instance.registerLazySingleton<JokeRepository>(() => JokeRepositoryImpl());
+    instance.registerLazySingleton<AuthService>(() => AuthServiceImpl());
 
     instance.registerSingleton<MainStore>(MainStore());
     instance.registerSingleton<HttpClient>(

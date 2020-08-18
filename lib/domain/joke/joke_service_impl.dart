@@ -5,10 +5,7 @@ import 'package:mobx_effective_architecture/domain/joke/joke_service.dart';
 import 'package:mobx_effective_architecture/domain/joke/models/joke_model.dart';
 
 class JokeServiceImpl implements JokeService {
-  JokeServiceImpl({JokeRepository jokeRepository})
-      : jokeRepository = jokeRepository ?? GetIt.I.get<JokeRepository>();
-
-  final JokeRepository jokeRepository;
+  final JokeRepository jokeRepository = GetIt.I.get<JokeRepository>();
 
   @override
   Future fetchJoke() async {
