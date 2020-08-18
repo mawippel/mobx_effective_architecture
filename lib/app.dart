@@ -12,6 +12,8 @@ import 'package:mobx_effective_architecture/domain/joke/joke_service_impl.dart';
 import 'package:mobx_effective_architecture/shared/providers/http_client.dart';
 import 'package:mobx_effective_architecture/shared/services/auth_service.dart';
 import 'package:mobx_effective_architecture/shared/services/auth_service_impl.dart';
+import 'package:mobx_effective_architecture/shared/services/hive_service.dart';
+import 'package:mobx_effective_architecture/shared/services/hive_service_impl.dart';
 import 'package:mobx_effective_architecture/shared/stores/main_store.dart';
 import 'package:mobx_effective_architecture/utils/routes.dart';
 import 'package:oktoast/oktoast.dart';
@@ -29,13 +31,12 @@ class App extends StatelessWidget {
         position: ToastPosition.bottom,
         handleTouth: true,
         dismissOtherOnShow: true,
-        child: MaterialApp(
+        child: GetMaterialApp(
           title: 'Flutter Demo',
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
           initialRoute: '/splash',
-          navigatorKey: Get.key,
           navigatorObservers: [FirebaseAnalyticsObserver(analytics: analytics)],
           routes: Routes.all(),
         ),
@@ -45,6 +46,7 @@ class App extends StatelessWidget {
     instance.registerLazySingleton<JokeService>(() => JokeServiceImpl());
     instance.registerLazySingleton<JokeRepository>(() => JokeRepositoryImpl());
     instance.registerLazySingleton<AuthService>(() => AuthServiceImpl());
+    instance.registerLazySingleton<HiveService>(() => HiveServiceImpl());
 
     instance.registerSingleton<MainStore>(MainStore());
     instance.registerSingleton<HttpClient>(

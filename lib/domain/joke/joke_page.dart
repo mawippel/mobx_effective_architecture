@@ -13,7 +13,7 @@ class JokePage extends StatelessWidget {
 
   static const String name = '/home';
 
-  final mainStore = GetIt.I.get<MainStore>();
+  final MainStore mainStore = GetIt.I.get<MainStore>();
 
   @override
   Widget build(BuildContext context) => Scaffold(
