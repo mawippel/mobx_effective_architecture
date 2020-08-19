@@ -116,7 +116,7 @@ You can check some rules [here](https://dart-lang.github.io/linter/lints/).
 
 ## Contributors
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 
 Thanks goes to these wonderful people:
 <table>
@@ -127,13 +127,18 @@ Thanks goes to these wonderful people:
             <br /><a title="Code" href="#ideas-katis">💻</a> <a title="Documentation" href="#ideas-katis">📖</a> <a title="Reviewed Pull Requests" href="#ideas-katis">👀</a>
         </td>
         <td align="center">
+            <a href="https://github.com/evandropomatti"><img src="https://avatars2.githubusercontent.com/u/6530769?s=460&v=4" width="64px;" alt="" />
+            <br /><sub><b>Evandro Pomatti</b></sub></a>
+            <br /><a href="#ideas-katis" title="Ideas, & Feedback">🤔</a>
+        </td>
+        <td align="center">
             <a href="https://github.com/kmvbatista"><img src="https://avatars1.githubusercontent.com/u/50305552?s=460&v=4" width="64px;" alt="" />
             <br /><sub><b>Kennedy Batista</b></sub></a>
             <br /><a href="#ideas-katis" title="Ideas, & Feedback">🤔</a>
         </td>
         <td align="center">
-            <a href="https://github.com/evandropomatti"><img src="https://avatars2.githubusercontent.com/u/6530769?s=460&v=4" width="64px;" alt="" />
-            <br /><sub><b>Evandro Pomatti</b></sub></a>
+            <a href="https://github.com/tomazinimetz"><img src="https://avatars3.githubusercontent.com/u/58175795?s=460&u=2cff333d2e5a0d4098339cae6ee4269173065b84&v=4" width="64px;" alt="" />
+            <br /><sub><b>Mateus Metz</b></sub></a>
             <br /><a href="#ideas-katis" title="Ideas, & Feedback">🤔</a>
         </td>
     </tr>
