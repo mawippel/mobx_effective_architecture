@@ -9,6 +9,8 @@ import 'package:mobx_effective_architecture/domain/joke/joke_repository.dart';
 import 'package:mobx_effective_architecture/domain/joke/joke_repository_impl.dart';
 import 'package:mobx_effective_architecture/domain/joke/joke_service.dart';
 import 'package:mobx_effective_architecture/domain/joke/joke_service_impl.dart';
+import 'package:mobx_effective_architecture/domain/login/login_service.dart';
+import 'package:mobx_effective_architecture/domain/login/login_service_impl.dart';
 import 'package:mobx_effective_architecture/shared/providers/http_client.dart';
 import 'package:mobx_effective_architecture/shared/services/auth_service.dart';
 import 'package:mobx_effective_architecture/shared/services/auth_service_impl.dart';
@@ -45,6 +47,7 @@ class App extends StatelessWidget {
   void registerDependencies(GetIt instance) {
     instance.registerLazySingleton<JokeService>(() => JokeServiceImpl());
     instance.registerLazySingleton<JokeRepository>(() => JokeRepositoryImpl());
+    instance.registerLazySingleton<LoginService>(() => LoginServiceImpl());
     instance.registerLazySingleton<AuthService>(() => AuthServiceImpl());
     instance.registerLazySingleton<HiveService>(() => HiveServiceImpl());
 

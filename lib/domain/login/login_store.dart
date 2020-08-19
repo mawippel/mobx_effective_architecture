@@ -1,9 +1,13 @@
+import 'package:get_it/get_it.dart';
 import 'package:mobx/mobx.dart';
+import 'package:mobx_effective_architecture/domain/login/login_service.dart';
 part 'login_store.g.dart';
 
 class LoginStore = _LoginStoreBase with _$LoginStore;
 
 abstract class _LoginStoreBase with Store {
+  final LoginService loginService = GetIt.I.get<LoginService>();
+
   @observable
   String username;
 
@@ -11,7 +15,13 @@ abstract class _LoginStoreBase with Store {
   String password;
 
   @computed
-  bool get isValid => validateUsername() == null && validatePassword() == null;
+  bool get isValid => validateUsername == null && validatePassword == null;
+
+  @computed
+  String get validateUsername => loginService.validateUsername(username);
+
+  @computed
+  String get validatePassword => loginService.validatePassword(password);
 
   @action
   void setUsername(String newValue) {
@@ -21,22 +31,5 @@ abstract class _LoginStoreBase with Store {
   @action
   void setPassword(String newValue) {
     password = newValue;
-  }
-
-  String validateUsername() {
-    if (username == null || username.isEmpty) {
-      return 'Required';
-    }
-    return null;
-  }
-
-  String validatePassword() {
-    if (password == null || password.isEmpty) {
-      return 'Required';
-    }
-    if (password.length < 8) {
-      return 'Password must have more than 8 chars';
-    }
-    return null;
   }
 }

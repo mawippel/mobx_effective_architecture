@@ -7,7 +7,7 @@ class CustomTextField extends StatelessWidget {
 
   final String labelText;
   final void Function(String) onChange;
-  final String Function() errorText;
+  final String errorText;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         border: const OutlineInputBorder(),
         labelText: labelText,
-        errorText: errorText == null ? '' : errorText(),
+        errorText: errorText,
       ),
     );
   }
