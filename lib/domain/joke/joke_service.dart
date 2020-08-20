@@ -1,4 +1,6 @@
+import 'models/joke_model.dart';
+
 abstract class JokeService {
-  Future fetchJoke();
+  Future<Joke> fetchJoke();
   Future fetchJokeWithError();
 }
