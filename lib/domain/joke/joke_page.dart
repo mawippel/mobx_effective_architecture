@@ -3,8 +3,10 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mobx_effective_architecture/domain/custom-joke/custom_joke_page.dart';
+import 'package:mobx_effective_architecture/shared/handlers/dio_error_handler.dart';
 import 'package:mobx_effective_architecture/shared/stores/main_store.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:oktoast/oktoast.dart';
 
 class JokePage extends StatelessWidget {
   JokePage() {
@@ -48,8 +50,17 @@ class JokePage extends StatelessWidget {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: mainStore.jokeStore.fetchJoke,
+          onPressed: handleAddButton,
           child: Icon(Icons.add),
         ),
       );
+
+  Future handleAddButton() async {
+    try {
+      await mainStore.jokeStore.fetchJoke();
+      showToast("The server responded successfully");
+    } catch (e) {
+      DioErrorHandler.handle(e);
+    }
+  }
 }

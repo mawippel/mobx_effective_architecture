@@ -23,13 +23,8 @@ abstract class _JokeStoreBase extends LoadingStore with Store {
 
   @action
   Future fetchJoke() async {
-    try {
-      final joke = await loadingWrapper.wrapAsyncCall(jokeService.fetchJoke);
-      jokes.add(joke);
-      showToast("The server responded successfully");
-    } catch (e) {
-      DioErrorHandler.handle(e);
-    }
+    final joke = await loadingWrapper.wrapAsyncCall(jokeService.fetchJoke);
+    jokes.add(joke);
   }
 
   @action
