@@ -24,21 +24,6 @@ mixin _$JokeStore on _JokeStoreBase, Store {
     });
   }
 
-  final _$isLoadingAtom = Atom(name: '_JokeStoreBase.isLoading');
-
-  @override
-  bool get isLoading {
-    _$isLoadingAtom.reportRead();
-    return super.isLoading;
-  }
-
-  @override
-  set isLoading(bool value) {
-    _$isLoadingAtom.reportWrite(value, super.isLoading, () {
-      super.isLoading = value;
-    });
-  }
-
   final _$fetchJokeAsyncAction = AsyncAction('_JokeStoreBase.fetchJoke');
 
   @override
@@ -72,8 +57,7 @@ mixin _$JokeStore on _JokeStoreBase, Store {
   @override
   String toString() {
     return '''
-jokes: ${jokes},
-isLoading: ${isLoading}
+jokes: ${jokes}
     ''';
   }
 }
