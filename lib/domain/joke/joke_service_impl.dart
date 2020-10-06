@@ -8,7 +8,7 @@ class JokeServiceImpl implements JokeService {
   final JokeRepository jokeRepository = GetIt.I.get<JokeRepository>();
 
   @override
-  Future fetchJoke() async {
+  Future<Joke> fetchJoke() async {
     final Response response = await jokeRepository.fetchJoke();
     return Joke.fromJson(response.data);
   }

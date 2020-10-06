@@ -15,8 +15,6 @@ void main() {
         home: Material(
           child: CustomTextField(
             labelText: labelText,
-            onChange: null,
-            errorText: null,
           ),
         ),
       ),

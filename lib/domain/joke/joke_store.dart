@@ -4,7 +4,6 @@ import 'package:mobx_effective_architecture/domain/joke/joke_service.dart';
 import 'package:mobx_effective_architecture/shared/stores/loading_store.dart';
 import 'package:mobx_effective_architecture/domain/joke/models/joke_model.dart';
 import 'package:mobx_effective_architecture/shared/handlers/dio_error_handler.dart';
-import 'package:oktoast/oktoast.dart';
 
 part 'joke_store.g.dart';
 
@@ -23,13 +22,8 @@ abstract class _JokeStoreBase extends LoadingStore with Store {
 
   @action
   Future fetchJoke() async {
-    try {
-      final joke = await loadingWrapper.wrapAsyncCall(jokeService.fetchJoke);
-      jokes.add(joke);
-      showToast("The server responded successfully");
-    } catch (e) {
-      DioErrorHandler.handle(e);
-    }
+    final joke = await loadingWrapper.wrapAsyncCall(jokeService.fetchJoke);
+    jokes.add(joke);
   }
 
   @action
