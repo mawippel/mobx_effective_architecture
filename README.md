@@ -1,6 +1,6 @@
 # mobx_effective_architecture
 
-An effective architecture for Flutter Apps using MobX
+An effective architectural pattern for Flutter Apps using MobX
 
 ## Getting Started
 
