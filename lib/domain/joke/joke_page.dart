@@ -51,7 +51,7 @@ class JokePage extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: handleAddButton,
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
       );
 

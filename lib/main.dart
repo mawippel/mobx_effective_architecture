@@ -4,7 +4,7 @@ import 'main_dev.dart';
 import 'main_prod.dart';
 
 Future main() async {
-  await DotEnv().load('.env');
+  await DotEnv().load();
   final isDev = DotEnv().env['IS_DEVELOPMENT'];
 
   await HiveService.init();
